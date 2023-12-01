@@ -1,0 +1,26 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "Proyecto basado en websocket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisMeraz01/Web_Socket.git"
+  },
+  "keywords": [
+    "socket"
+  ],
+  "author": "luis meraz barajas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisMeraz01/Web_Socket/issues"
+  },
+  "homepage": "https://github.com/LuisMeraz01/Web_Socket#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}
