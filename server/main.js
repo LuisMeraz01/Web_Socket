@@ -18,6 +18,13 @@ app.get('/', function(req, res){
    mediante html y JS */
 io.on('connection' , function (socket){
     console.log('Alguien se ha conectado con socket');
+
+    //Controlador de eventos del cliente mediante sockets
+    socket.emit('messages', {
+        id: 1,
+        texto: "Hola soy un mensaje",
+        autor: "Lui Angel Meraz Barajas"
+    });
 });
 
 server.listen(3005, function(){
