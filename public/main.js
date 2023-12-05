@@ -16,7 +16,16 @@ function render (data){
                     <strong>${data.autor}</strong>:
                     <em>${data.texto}</em>
                 </div>`
-
     document.getElementById('messages').innerHTML = html;
+}
+// cada ves que alguien presione el boton enviar en el formulario el cliente emite un nuevo mensaje y manda el payload
+function addMessage(e){
 
+    var payload = {
+        autor: document.getElementById(username).value,
+        texto: document.getElementById(text).value
+    };
+
+    socket.emit('new message', payload);
+    return false;
 }
