@@ -18,7 +18,7 @@ function render(data) {
                     <strong>${elem.autor}</strong>:
                     <em>${elem.texto}</em>
                 </div>`);     
-    }).join(" ")
+    }).join(" ");
 
     document.getElementById('messages').innerHTML = html;
 }

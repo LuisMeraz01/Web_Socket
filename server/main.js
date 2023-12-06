@@ -7,11 +7,11 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-var messages = {
+var messages = [{
     id: 1,
-    text: "Hola soy un mensaje",
+    texto: "Hola soy un mensaje",
     autor: "Luis Angel Meraz Barajas"
-}
+}];
 
 app.use(express.static('public'));
 
