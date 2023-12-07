@@ -38,5 +38,5 @@ io.on('connection' , function (socket){
 });
 
 server.listen(3005, function(){
-    console.log("El servidor esta corriendo en http://localhost:3005");
+    console.log("El servidor esta corriendo en http://192.168.0.96:3005");
 });

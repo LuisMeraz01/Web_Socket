@@ -1,6 +1,6 @@
 /*Creamos variable que permita la conexion entre back y front */
 
-var socket = io.connect('http://localhost:3005', {'forceNew': true });
+var socket = io.connect('http://192.168.0.96:3005', {'forceNew': true });
 // Esto manda al servidor el mensaje de connect y aparece en consola
 
 // El cliente manejara datos mediante mensajes, esto se llamaran evento y se mostraran por consola en el navegador
@@ -28,10 +28,12 @@ function render(data) {
 function addMessage(e) {
 
     var payload = {
-        autor: document.getElementById(username).value,
-        texto: document.getElementById(text).value
+        autor: document.getElementById('username').value,
+        texto: document.getElementById('text').value
     };
 
-    socket.emit('new message', payload);
+    socket.emit('new-message', payload);
+    const msj = document.getElementById('text');
+    msj.value='';
     return false;
 }

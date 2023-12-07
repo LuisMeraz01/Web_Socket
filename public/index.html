@@ -1,25 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mi aplicacion con Socket</title>
 
-        <!-- Mandamos a llmar la libreria de socket para que pueda ser utilizada en frontend-->
-        <script src="socket.io/socket.io.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi aplicacion con Socket</title>
 
-        <script src="main.js"></script>
-    </head>
-    <body>
-        <h1>Mi aplicacion</h1>
-        <div id="messages"> </div>
+    <!-- Mandamos a llmar la libreria de socket para que pueda ser utilizada en frontend-->
+    <script src="socket.io/socket.io.js"></script>
+
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <div class="container-main">
+        <h1>Chat con Socket</h1>
+        <div id="messages" class="container-chat"> a </div>
         <br>
 
-        <form onsubmit="return addMessage(this)">
+        <form onsubmit="return addMessage(this)" class="container-form" autocomplete="off">
             <input type="text" id="username" placeholder="Tu nombre">
             <input type="text" id="text" placeholder="Cuentanos algo">
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" class="btn-enviar">
         </form>
+    </div>
 
-    </body>
+
+</body>
+
+<style>
+    body {
+        background-color: rgb(177, 181, 183);
+    }
+
+    .btn-enviar{
+        cursor: pointer;
+        height: 22px;
+    }
+
+    input{
+        margin-right: 3px;
+        height: 17px;
+    }
+
+    .container-main{
+        
+        justify-content: center;
+        background-color: rgb(7, 41, 59);
+        margin-top: 20px;
+        margin: 40px;
+        color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .container-chat {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border-radius: 5px;
+        padding: 5px;
+    }
+</style>
+
 </html>
