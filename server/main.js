@@ -5,7 +5,26 @@ var app = express();
 /* Aqui estara toda la funcionalidad de los socket, es recomendable usar el moudlo http
    para pasarle la app a express y manejar bien http */
 var server = require('http').Server(app);
-var io = require('socket.io')(server);
+//var io = require('socket.io')(server);
+
+// SECCION DE CORS
+var io = require('socket.io')(server, {
+    cors: {
+        origin: '*',
+        methods: ['get'],
+        allowedHeaders: ["*"],
+    }
+});
+
+// Configurar cabeceras y cors
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
 
 var messages = [{
     id: 1,
@@ -38,5 +57,5 @@ io.on('connection' , function (socket){
 });
 
 server.listen(3005, function(){
-    console.log("El servidor esta corriendo en http://192.168.0.96:3005");
+    console.log(`El servidor esta corriendo en http://192.168.0.96:3005`);
 });
